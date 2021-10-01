@@ -79,20 +79,52 @@ inline long long  MIN3(long long  a, long long b, long long c) {return (a) < (b)
 
 // ll *fact = new ll[200000 + 5];
 // ll *ifact = new ll[200000 + 5];
+void leftRotatebyOne(vector<ll>&v, ll n, ll j)
+{
+  ll temp = v[j], i;
+  for (i = j; i < n - 1; i++)
+    v[i] = v[i + 1];
 
+  v[n - 1] = temp;
+}
+void leftRotate(vector<ll> &v, ll d, ll n, ll j)
+{
+  for (ll i = j; i < j + d; i++)
+    leftRotatebyOne(v, n, j);
+}
 void solution()
 {
 
-  string s;
-  cin >> s;
-  ll c1 = 0, c2 = 0, c3 = 0;
-  f(i, 0, s.size()) {
-    if (s[i] == 'A') c1++;
-    else if (s[i] == 'B') c2++;
-    else c3++;
+  ll n;
+  cin >> n;
+  vector<ll>v(n), v1(n);
+  vector<vector<ll>>v3;
+  f(i, 0, n) {cin >> v[i]; v1[i] = v[i];}
+  sort(all(v1));
+  f(i, 0, n) {
+    ll fnd = -1;
+    f(j, i + 1, n) {
+      if (v1[i] == v[j]) {
+        v3.pb({i + 1, n, j - i});
+        fnd = j; break;
+      }
+    }
+    if (fnd != -1) {
+      leftRotate(v, fnd - i, n, i);
+    }
+
   }
-  if (c2 == c1 + c3) print("YES");
-  else print("NO");
+  cout << v3.size() << endl;
+  for (auto i : v3) {
+    for (auto j : i) {
+      cout << j << " ";
+    }
+    cout << endl;
+  }
+
+
+
+
 }
 
 
