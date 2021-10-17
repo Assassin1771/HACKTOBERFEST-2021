@@ -4,3 +4,4 @@ def duplicate(ls):
     print(len(ls) - len(set(ls)))
 
 duplicate(ls)
+# print ("Hello World") Hello world in python
