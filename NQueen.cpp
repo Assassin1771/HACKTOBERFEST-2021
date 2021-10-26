@@ -46,8 +46,6 @@ int main(){
     for(int i = 0; i <n; i++)  board[i] = new bool[n];
     memset(board,0,sizeof(board));
     printboard(board,n);
-    // bool ans = solve(board,n,0);
-    // if(ans == 0) cout<<"Solution does not exist !"<<endl;
     for(int i=0;i<n;i++) free(board[i]);
     free(board);
     return 0;
