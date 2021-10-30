@@ -3,9 +3,6 @@ arr=[1,5,2,6,58,3,56,856,4,32,54,2,246,5,2,5,63,53,2]
 low=0
 high=int(len(arr)-1)
 
-#print(len(arr))
-#print(mid)
-
 x=int(input("Which element do you need to find?"))
 print(high)
 while(low<=high):
