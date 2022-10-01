@@ -8,38 +8,6 @@ typedef struct Node{
     struct Node *right;
 } Node;
 
-/* Node* insert(Node *root, int data){
-    Node *aux = (Node*)malloc(sizeof(Node));
-
-    aux->data = data;
-    aux->left = NULL;
-    aux->right = NULL;
-
-    if(root == NULL){
-        root = aux;
-    }else{
-        Node *cur = root;
-        Node *parent = NULL;
-        while(1){
-            parent = cur;
-            if(data < parent->data){
-                cur = cur->left;
-                if(cur == NULL){
-                    parent->left = aux;
-                    return root;
-                }
-            }else{
-                cur = cur->right;
-                if(cur == NULL){
-                    parent->right = aux;
-                    return root;
-                }
-            }
-        }
-    }
-    return root;
-} */
-
 Node* insert(Node *root, long int data){
     Node *aux = (Node*)malloc(sizeof(Node));
 
